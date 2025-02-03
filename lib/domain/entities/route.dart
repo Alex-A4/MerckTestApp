@@ -14,7 +14,7 @@ class RouteEntity with EquatableMixin {
   final String cityFrom;
   final String cityTo;
 
-  RouteEntity({
+  const RouteEntity({
     required this.distance,
     required this.duration,
     required this.steps,

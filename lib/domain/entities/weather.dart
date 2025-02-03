@@ -7,7 +7,7 @@ class WeatherEntity with EquatableMixin {
   final LocationEntity location;
   final double temperature;
 
-  WeatherEntity({
+  const WeatherEntity({
     required this.description,
     required this.location,
     required this.temperature,

@@ -35,6 +35,7 @@ class _MainViewState extends State<MainView> {
               child: Column(
                 children: [
                   TextInput(
+                    key: const Key('MainPageOriginalCity'),
                     labelText: LocaleKeys.enterOriginalCityLabel.tr(),
                     hintText: LocaleKeys.enterOriginalCityHint.tr(),
                     controller: _fromController,
@@ -42,6 +43,7 @@ class _MainViewState extends State<MainView> {
                   ),
                   const SizedBox(height: Sizes.verticalSpace),
                   TextInput(
+                    key: const Key('MainPageDestinationCity'),
                     labelText: LocaleKeys.enterDestinationCityLabel.tr(),
                     hintText: LocaleKeys.enterDestinationCityHint.tr(),
                     controller: _toController,
@@ -58,6 +60,7 @@ class _MainViewState extends State<MainView> {
             final hasFocus = FocusScope.of(context).hasFocus;
             return AnimatedCrossFade(
               firstChild: ElevatedButton(
+                key: const Key('MainPageCalculateButton'),
                 onPressed: () {
                   if (_formKey.currentState!.validate()) {
                     context.router.push(

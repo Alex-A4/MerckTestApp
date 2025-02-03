@@ -15,7 +15,7 @@ class InitialRouteState extends RouteState {
 class RouteDataState extends RouteState {
   final RouteEntity route;
 
-  RouteDataState({required this.route});
+  const RouteDataState({required this.route});
 
   @override
   List<Object?> get props => [route];
