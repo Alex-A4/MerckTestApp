@@ -1,0 +1,49 @@
+name: merck_test_app
+description: "Test app for merck interview"
+publish_to: 'none' # Remove this line if you wish to publish to pub.dev
+
+version: 1.0.0+1
+
+environment:
+  sdk: ">=3.0.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  flutter_localizations:
+    sdk: flutter
+  cupertino_icons: ^1.0.8
+  flutter_bloc: ^9.0.0
+  bloc: ^9.0.0
+  equatable: ^2.0.7
+  json_annotation: ^4.9.0
+  get_it: ^8.0.3
+  injectable: ^2.5.0
+  auto_route: ^8.3.0
+  logging: ^1.3.0
+  easy_localization: ^3.0.7+1
+  easy_logger: ^0.0.2
+  rxdart: ^0.28.0
+  dio: ^5.8.0+1
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+
+  flutter_lints: ^4.0.0
+  json_serializable: ^6.8.0
+  injectable_generator: ^2.6.2
+  build_runner: ^2.4.11
+  auto_route_generator: ^8.1.0
+  melos: ^6.3.2
+  mocktail: ^1.0.4
+
+flutter_gen:
+  output: lib/generated/
+
+flutter:
+  uses-material-design: true
+
+  assets:
+    - assets/translations/

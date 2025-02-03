@@ -1,0 +1,20 @@
+{
+    "lang": "en",
+    "routeCalculatorTitle": "Route Calculator",
+    "enterOriginalCityLabel": "Original city",
+    "enterOriginalCityHint": "Netanya",
+    "enterDestinationCityLabel": "Destination city",
+    "enterDestinationCityHint": "Herzelia",
+    "calculateRouteButton": "Calculate",
+    "fieldShouldNotBeEmpty": "Field should not be empty",
+    "routeResultTitle": "Route",
+    "fromCity": "From: {}",
+    "toCity": "To: {}",
+    "couldnotLoadRoute": "Could not load route",
+    "tryAgain": "Try again",
+    "routeSteps": "Steps",
+    "weather": "Weather",
+    "distance": "Distance: {} km",
+    "duration": "Duration: {} min",
+    "couldnotLoadWeather": "Could not load weather"
+}

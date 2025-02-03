@@ -1,0 +1,62 @@
+name: merck_test_app
+
+packages:
+  - ./
+
+sdkPath: .fvm/versions/3.24.5
+
+command:
+  bootstrap:
+    runPubGetInParallel: true
+    enforceLockfile: false
+
+scripts:
+  check:
+    description: Static analyze and format checking
+    run: melos run analyze && melos run verify_format
+
+  verify_format:
+    description: Check format if its correct. To fix it call `melos format`
+    run: fvm dart format -l 120 --output=none --set-exit-if-changed .
+    exec: 
+      failFast: true
+  
+  format:
+    description: Format code
+    run: fvm dart format -l 120 .
+
+  analyze:
+    description: Analyze project
+    run: fvm dart analyze .
+    exec:
+      failFast: false
+
+  gen:
+    description: Generate code and format
+    run: melos run gen:build_runner --no-select && melos run gen:locale --no-select && melos run format
+
+  gen:build_runner:
+    description: Generate code via build_runner
+    run: flutter packages pub run build_runner build --delete-conflicting-outputs
+    exec:
+      concurrency: 1
+      failFast: true
+    packageFilters:
+      dependsOn: build_runner
+
+  gen:locale:
+    description: Generate localization keys
+    run: fvm dart run easy_localization:generate --source-dir assets/translations -f keys -o locale_keys.g.dart && melos run format
+    exec:
+      failFast: true
+    packageFilters:
+      # suppose it's only in root
+      dependsOn: melos
+
+  test:
+    description: Run all tests
+    run: fvm flutter test
+    exec:
+      failFast: false
+    packageFilters:
+      dependsOn: flutter_test
