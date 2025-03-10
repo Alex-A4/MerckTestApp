@@ -1,4 +1,5 @@
 # merck_test_app
+Link to [description](https://disk.yandex.ru/i/wOpUZoC6HH0-Fw)
 
 ## Installing
 ```sh
